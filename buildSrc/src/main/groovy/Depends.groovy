@@ -14,7 +14,7 @@ class Depends {
         final fragment = 'androidx.fragment:fragment-ktx:1.2.5'
         final leanback = 'androidx.leanback:leanback:1.0.0'
         final lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0'
-        final navigationVersion = '2.3.3'
+        final navigationVersion = '2.3.0'
         final navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
         final navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
         final recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
