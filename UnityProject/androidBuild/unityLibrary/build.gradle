@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    defaultConfig {
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+        consumerProguardFiles 'proguard-unity.txt'
+    }
+
+    aaptOptions {
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    ndkVersion = '19.0.5232133'
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+    }
+}

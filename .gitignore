@@ -93,3 +93,9 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+/UnityProject/androidBuild/*
+!/UnityProject/androidBuild/unityLibrary
+/UnityProject/androidBuild/unityLibrary/libs
+/UnityProject/androidBuild/unityLibrary/src/main/assets
+/UnityProject/androidBuild/unityLibrary/src/main/jniLibs

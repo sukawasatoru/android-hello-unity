@@ -11,6 +11,12 @@ android {
         signingConfig signingConfigs.debug
     }
 
+    ndkVersion = '19.0.5232133'
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+    }
+
     signingConfigs {
         debug {
             storeFile file("$rootDir/debug.p12")
@@ -26,5 +32,6 @@ android {
 }
 
 dependencies {
+    implementation project(':unityLibrary')
     implementation Depends.kotlin.stdlib
 }

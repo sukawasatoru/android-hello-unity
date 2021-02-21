@@ -1,4 +1,7 @@
-include ':app'
+include ':app', ':unityLibrary'
+
+// for avoiding evaluate of the UnityProject/settings.gradle.
+project(':unityLibrary').projectDir = file('UnityProject/androidBuild/unityLibrary')
 
 def isCi = System.getenv().containsKey("CI")
 def hasCacheServer = hasProperty('cacheServerUri')
