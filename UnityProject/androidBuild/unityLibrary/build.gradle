@@ -24,3 +24,7 @@ android {
         doNotStrip '*/armeabi-v7a/*.so'
     }
 }
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
