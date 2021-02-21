@@ -6,11 +6,8 @@ buildscript {
     }
 
     dependencies {
-        // use v2.3.0 for AGP v3.x.
-        //noinspection GradleDependency
-        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0'
-
-        classpath 'com.android.tools.build:gradle:3.6.4'
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.3'
+        classpath 'com.android.tools.build:gradle:4.0.2'
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.32-alpha'
     }
 }
@@ -51,9 +48,14 @@ def setupAndroidPlugin = { isCi, project ->
         }
 
         compileOptions {
+            coreLibraryDesugaringEnabled true
             targetCompatibility = JavaVersion.VERSION_1_8
             sourceCompatibility = JavaVersion.VERSION_1_8
         }
+    }
+
+    project.dependencies {
+        coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.1'
     }
 }.curry(System.getenv('CI') == 'true')
 
