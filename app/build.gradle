@@ -38,5 +38,6 @@ android {
 
 dependencies {
     implementation project(':unityLibrary')
+    implementation Depends.androidx.constraint
     implementation Depends.kotlin.stdlib
 }
