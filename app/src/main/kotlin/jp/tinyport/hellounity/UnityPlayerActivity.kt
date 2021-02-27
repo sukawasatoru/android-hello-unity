@@ -15,9 +15,6 @@ class UnityPlayerActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val cmdLine = intent.getStringExtra("unity")
-        intent.putExtra("unity", cmdLine)
-
         mUnityPlayer = UnityPlayerLayout(this)
         setContentView(mUnityPlayer)
         mUnityPlayer!!.requestFocus()
@@ -48,12 +45,6 @@ class UnityPlayerActivity : Activity() {
         mUnityPlayer!!.newIntent(intent)
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-
-        mUnityPlayer!!.configurationChanged(newConfig)
-    }
-
     override fun onLowMemory() {
         super.onLowMemory()
 
@@ -67,16 +58,22 @@ class UnityPlayerActivity : Activity() {
             mUnityPlayer!!.lowMemory()
         }
     }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-
-        mUnityPlayer!!.windowFocusChanged(hasFocus)
-    }
 }
 
 @SuppressLint("ViewConstructor")
 class UnityPlayerLayout(activity: Activity) : UnityPlayer(activity) {
+    override fun onWindowFocusChanged(hasWindowFocus: Boolean) {
+        super.onWindowFocusChanged(hasWindowFocus)
+
+        windowFocusChanged(hasWindowFocus)
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        configurationChanged(newConfig)
+    }
+
     override fun onUnityPlayerUnloaded() {
         currentActivity.moveTaskToBack(true)
 
