@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.Window
 import com.unity3d.player.UnityPlayer
 
 class UnityPlayerActivity : Activity() {
@@ -15,8 +14,6 @@ class UnityPlayerActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
 
         val cmdLine = intent.getStringExtra("unity")
         intent.putExtra("unity", cmdLine)
